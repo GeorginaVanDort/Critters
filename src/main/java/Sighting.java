@@ -11,13 +11,6 @@ public class Sighting {
   private int animalId;
   private Timestamp time;
 
-  private static final String HEALTH_HIGH = "Healthy";
-  private static final String HEALTH_MED = "Medium Health";
-  private static final String HEALTH_LOW = "Poor Health";
-
-  private static final String AGE_HIGH = "Adult";
-  private static final String AGE_MED = "Youth";
-  private static final String AGE_LOW = "Baby";
 
 
 

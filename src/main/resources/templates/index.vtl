@@ -50,8 +50,25 @@
               <input id="name" name="name" type="text" class="form-control" required>
             </div>
             <h2 class="panel-title">
-              <a data-toggle="collapse" href="#add-endangered_animal">Endangered</a>
+              <a data-toggle="collapse" href="#add-endangered-animal">Endangered</a>
             </h2>
+            <div class="form panel-collapse collapse" id="add-endangered-animal">
+              <div class="panel-body">
+                <div class="form">
+                  <div class="form-group">
+
+
+                    <label for="health">Health:</label>
+                    <select id="health" name="health" type="text" class="form-control">
+                      <option value="$sighting.">$EndangeredAnimal.HEALTH_HIGH</option>
+                      <option value="$sighting.">$EndangeredAnimal.HEALTH_MED</option>
+                      <option value="$sighting.">$EndangeredAnimal.HEALTH_LOW</option>
+
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
             <button class="btn btn-info" type="submit">Add New Animal</button>
           </form>
         </div>

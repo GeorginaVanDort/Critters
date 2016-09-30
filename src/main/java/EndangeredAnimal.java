@@ -8,6 +8,14 @@ public class EndangeredAnimal extends Animal {
   private String age;
   private boolean endangered;
 
+  public static final String HEALTH_HIGH = "Healthy";
+  public static final String HEALTH_MED = "Medium Health";
+  public static final String HEALTH_LOW = "Poor Health";
+
+  public static final String AGE_HIGH = "Adult";
+  public static final String AGE_MED = "Youth";
+  public static final String AGE_LOW = "Baby";
+
   public EndangeredAnimal (String name, String health, String age) {
     super(name);
     this.health = health;
