@@ -60,4 +60,18 @@ public class Animal {
     }
   }
 
+  public static Animal searchByName(String name) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM sightings where name=:name";
+      Animal animal = con.createQuery(sql)
+        .addParameter("name", name)
+        .throwOnMappingFailure(false)
+        .executeAndFetchFirst(Animal.class);
+        if (animal == null) {
+          throw new NullPointerException("That animal wasn't found in the database. Check your spelling and try again.")
+        }
+      return animal;
+    }
+  }
+
 }
