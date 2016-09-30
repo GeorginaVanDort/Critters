@@ -22,27 +22,27 @@ public class SightingTest {
     assertEquals(true, testSighting instanceof Sighting);
   }
 
-  // @Test
-  // public void getName_sightAInstantiatesWithName_true() {
-  //   Sighting testSighting = sightA;
-  //   assertEquals("Raccoon", testSighting.getName());
-  // }
-  //
-  //
-  // @Test
-  // public void equals_returnsTrueIfNameAndContentAreSame_true() {
-  //   Sighting testSighting = sightA;
-  //   Sighting anotherSighting = sightA;
-  //   assertTrue(testSighting.equals(anotherSighting));
-  // }
-  //
-  // @Test
-  // public void save_insertsObjectIntoDatabase_Sighting() {
-  //   Sighting testSighting = sightA;
-  //   testSighting.save();
-  //   assertTrue(Sighting.all().get(0).equals(testSighting));
-  // }
-  //
+  @Test
+  public void getRangerName_sightAInstantiatesWithRangerName_true() {
+    Sighting testSighting = sightA;
+    assertEquals("freddy", testSighting.getRangerName());
+  }
+
+
+  @Test
+  public void equals_returnsTrueIfRangerNameAndLocationAreSame_true() {
+    Sighting testSighting = sightA;
+    Sighting anotherSighting = sightA;
+    assertTrue(testSighting.equals(anotherSighting));
+  }
+
+  @Test
+  public void save_insertsSightingIntoDatabase_Sighting() {
+    Sighting testSighting = sightA;
+    testSighting.save();
+    assertTrue(Sighting.all().get(0).equals(testSighting));
+  }
+
   // @Test
   // public void save_assignsIdToSighting() {
   //   Sighting testSighting = sightA;
