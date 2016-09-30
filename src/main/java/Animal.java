@@ -4,7 +4,7 @@ import java.util.List;
 import java.sql.Timestamp;
 
 public class Animal {
-  public static String name;
+  public String name;
   public int id;
 
   public Animal(String name) {
@@ -39,4 +39,25 @@ public class Animal {
         .getKey();
     }
   }
+
+  public static List<Animal> all() {
+    String sql = "SELECT * FROM animals";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).throwOnMappingFailure(false)
+      .throwOnMappingFailure(false)
+      .executeAndFetch(Animal.class);
+    }
+  }
+
+  public static Animal find(int id) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM animals WHERE id=:id";
+      Animal animal = con.createQuery(sql)
+        .addParameter("id", id)
+        .throwOnMappingFailure(false)
+        .executeAndFetchFirst(Animal.class);
+      return animal;
+    }
+  }
+
 }

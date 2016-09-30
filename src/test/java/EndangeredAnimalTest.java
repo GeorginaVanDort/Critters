@@ -13,31 +13,46 @@ public class EndangeredAnimalTest {
 
   @Test
     public void endangeredAnimal_instantiatesCorrectly_true() {
-      EndangeredAnimal enAnimal = endangered;
-      assertEquals(true, enAnimal instanceof EndangeredAnimal);
+      EndangeredAnimal testEndangeredAnimal = endangered;
+      assertEquals(true, testEndangeredAnimal instanceof EndangeredAnimal);
     }
 
   @Test
   public void getName_endangeredInstantiatesWithName_true() {
-    EndangeredAnimal enAnimal = endangered;
-    assertEquals("Secret Owl", enAnimal.getName());
+    EndangeredAnimal testEndangeredAnimal = endangered;
+    assertEquals("Secret Owl", testEndangeredAnimal.getName());
   }
 
   @Test
   public void getHealth_endangeredInstantiatesWithHealth_true() {
-    EndangeredAnimal enAnimal = endangered;
-    assertEquals("health", enAnimal.getHealth());
+    EndangeredAnimal testEndangeredAnimal = endangered;
+    assertEquals("health", testEndangeredAnimal.getHealth());
   }
 
   @Test
   public void getAge_endangeredInstantiatesWithAge_true() {
-    EndangeredAnimal enAnimal = endangered;
-    assertEquals("youth", enAnimal.getAge());
+    EndangeredAnimal testEndangeredAnimal = endangered;
+    assertEquals("youth", testEndangeredAnimal.getAge());
   }
 
   @Test
   public void getEndangered_getEndangeRedreturnsTrue_boolean() {
-    EndangeredAnimal enAnimal = endangered;
-    assertEquals(true, enAnimal.isEndangered());
+    EndangeredAnimal testEndangeredAnimal = endangered;
+    assertEquals(true, testEndangeredAnimal.isEndangered());
   }
+
+  // @Test
+  // public void save_insertsObjectIntoDatabase_EndangeredAnimal() {
+  //   EndangeredAnimal testEndangeredAnimal = endangered;
+  //   testEndangeredAnimal.save();
+  //   assertEquals(true, EndangeredAnimal.all().get(0).equals(testBlog));
+  // }
+  //
+  // @Test
+  // public void equals_returnsTrueIfNameAndContentAreSame_true() {
+  //   Blog testBlog = blog;
+  //   Blog anotherBlog = blog;
+  //   assertTrue(testBlog.equals(anotherBlog));
+  // }
+
 }
