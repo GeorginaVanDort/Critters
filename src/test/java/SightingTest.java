@@ -28,6 +28,11 @@ public class SightingTest {
     assertEquals("freddy", testSighting.getRangerName());
   }
 
+  @Test
+  public void getLocation_sightAInstantiatesWithLocation_true() {
+    Sighting testSighting = sightA;
+    assertEquals("in the bushes", testSighting.getLocation());
+  }
 
   @Test
   public void equals_returnsTrueIfRangerNameAndLocationAreSame_true() {
@@ -43,42 +48,30 @@ public class SightingTest {
     assertTrue(Sighting.all().get(0).equals(testSighting));
   }
 
-  // @Test
-  // public void save_assignsIdToSighting() {
-  //   Sighting testSighting = sightA;
-  //   testSighting.save();
-  //   Sighting savedSighting = Sighting.all().get(0);
-  //   assertEquals(savedSighting.getId(), testSighting.getId());
-  // }
-  //
-  // @Test
-  // public void all_returnsAllInstancesOfSighting_true() {
-  //   Sighting firstSighting = sightA;
-  //   firstSighting.save();
-  //   Sighting secondSighting = sightB;
-  //   secondSighting.save();
-  //   assertEquals(true, Sighting.all().get(0).equals(firstSighting));
-  //   assertEquals(true, Sighting.all().get(1).equals(secondSighting));
-  // }
-  //
-  // @Test
-  // public void find_returnsSightingWithSameId_secondSighting() {
-  //   Sighting firstSighting = sightA;
-  //   firstSighting.save();
-  //   Sighting secondSighting = sightB;
-  //   secondSighting.save();
-  //   assertEquals(Sighting.find(secondSighting.getId()), secondSighting);
-  // }
-  //
-  // @Test
-  // public void getName_sightAInstantiatesWithCorrectName_true() {
-  //   Sighting firstSighting = sightA;
-  //   firstSighting.save();
-  //   Sighting secondSighting = sightB;
-  //   secondSighting.save();
-  //   assertEquals("Raccoon", firstSighting.getName());
-  //   assertEquals("Donkey", secondSighting.getName());
-  //
-  // }
+  @Test
+  public void save_assignsIdToSighting() {
+    Sighting testSighting = sightA;
+    testSighting.save();
+    Sighting savedSighting = Sighting.all().get(0);
+    assertEquals(savedSighting.getId(), testSighting.getId());
+  }
 
+  @Test
+  public void all_returnsAllInstancesOfSighting_true() {
+    Sighting firstSighting = sightA;
+    firstSighting.save();
+    Sighting secondSighting = sightB;
+    secondSighting.save();
+    assertEquals(true, Sighting.all().get(0).equals(firstSighting));
+    assertEquals(true, Sighting.all().get(1).equals(secondSighting));
+  }
+
+  @Test
+  public void find_returnsSightingWithSameId_secondSighting() {
+    Sighting firstSighting = sightA;
+    firstSighting.save();
+    Sighting secondSighting = sightB;
+    secondSighting.save();
+    assertEquals(Sighting.find(secondSighting.getId()), secondSighting);
+  }
 }
