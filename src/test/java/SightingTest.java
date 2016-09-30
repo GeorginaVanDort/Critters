@@ -74,4 +74,10 @@ public class SightingTest {
     secondSighting.save();
     assertEquals(Sighting.find(secondSighting.getId()), secondSighting);
   }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void save_throwsExceptionIfRangerNameShort_true() {
+    Sighting firstEndangeredAnimal = new Sighting("a", "on the hill", 12);
+    firstEndangeredAnimal.save();
+  }
 }

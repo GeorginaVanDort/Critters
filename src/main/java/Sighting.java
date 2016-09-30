@@ -50,7 +50,7 @@ public class Sighting {
 
   public void save() {
     if ((this.rangerName.length())<=2) {
-      throw new IllegalArgumentException("Please enter your full name");
+      throw new IllegalArgumentException("Ranger Name is too short");
     }
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO sightings (location, rangerName, animal_id, time) VALUES (:location, :rangerName, :animalId, now())";
