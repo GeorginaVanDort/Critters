@@ -89,4 +89,13 @@ public class AnimalTest {
     assertEquals(Animal.searchByName("Donkey"), secondAnimal);
   }
 
+  @Test(expected = NullPointerException.class)
+  public void searchByName_throwsExceptionIfAnimalNotFound_true() {
+    Animal firstAnimal = animal;
+    firstAnimal.save();
+    Animal secondAnimal = donkey;
+    secondAnimal.save();
+    assertEquals(Animal.searchByName("Ducky"), secondAnimal);
+  }
+
 }
