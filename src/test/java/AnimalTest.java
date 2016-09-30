@@ -24,4 +24,7 @@ public class AnimalTest {
     Animal testAnimal = animal;
     assertEquals("Raccoon", testAnimal.getName());
   }
+
+  
+
 }

@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Timestamp;
 
-public class Endangered extends Animal {
+public class EndangeredAnimal extends Animal {
   private String health;
-  private int age;
+  private String age;
   private boolean endangered;
 
-  public Endangered (String health, int age) {
+  public EndangeredAnimal (String name, String health, String age) {
     super(name);
     this.health = health;
     this.age = age;
