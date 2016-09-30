@@ -80,4 +80,13 @@ public class AnimalTest {
 
   }
 
+  @Test
+  public void searchByName_returnsAnimalWithSameName_secondAnimal() {
+    Animal firstAnimal = animal;
+    firstAnimal.save();
+    Animal secondAnimal = donkey;
+    secondAnimal.save();
+    assertEquals(Animal.searchByName("Donkey"), secondAnimal);
+  }
+
 }
