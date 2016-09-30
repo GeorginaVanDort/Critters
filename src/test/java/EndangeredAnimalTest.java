@@ -84,5 +84,22 @@ public class EndangeredAnimalTest {
     assertEquals(EndangeredAnimal.find(secondEndangeredAnimal.getId()), secondEndangeredAnimal);
   }
 
+  @Test
+  public void searchByName_returnsEndangeredAnimalWithSameName_secondEndangeredAnimal() {
+    EndangeredAnimal firstEndangeredAnimal = endangered;
+    firstEndangeredAnimal.save();
+    EndangeredAnimal secondEndangeredAnimal = endangered2;
+    secondEndangeredAnimal.save();
+    assertEquals(EndangeredAnimal.searchByName("Hairy Faced Squrrrl"), secondEndangeredAnimal);
+  }
+
+  @Test(expected = NullPointerException.class)
+  public void searchByName_throwsExceptionIfEndangeredAnimalNotFound_true() {
+    EndangeredAnimal firstEndangeredAnimal = endangered;
+    firstEndangeredAnimal.save();
+    EndangeredAnimal secondEndangeredAnimal = endangered2;
+    secondEndangeredAnimal.save();
+    assertEquals(EndangeredAnimal.searchByName("Ducky"), secondEndangeredAnimal);
+  }
 
 }
