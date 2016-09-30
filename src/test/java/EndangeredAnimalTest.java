@@ -12,7 +12,7 @@ public class EndangeredAnimalTest {
   EndangeredAnimal endangered = new EndangeredAnimal("Secret Owl", "health", "youth");
 
   @Test
-    public void endangered_instantiatesCorrectly_true() {
+    public void endangeredAnimal_instantiatesCorrectly_true() {
       EndangeredAnimal enAnimal = endangered;
       assertEquals(true, enAnimal instanceof EndangeredAnimal);
     }
@@ -23,5 +23,21 @@ public class EndangeredAnimalTest {
     assertEquals("Secret Owl", enAnimal.getName());
   }
 
+  @Test
+  public void getHealth_endangeredInstantiatesWithHealth_true() {
+    EndangeredAnimal enAnimal = endangered;
+    assertEquals("health", enAnimal.getHealth());
+  }
 
+  @Test
+  public void getAge_endangeredInstantiatesWithAge_true() {
+    EndangeredAnimal enAnimal = endangered;
+    assertEquals("youth", enAnimal.getAge());
+  }
+
+  @Test
+  public void getEndangered_getEndangeRedreturnsTrue_boolean() {
+    EndangeredAnimal enAnimal = endangered;
+    assertEquals(true, enAnimal.isEndangered());
+  }
 }

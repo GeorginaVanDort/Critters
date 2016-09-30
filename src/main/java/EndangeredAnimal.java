@@ -15,6 +15,14 @@ public class EndangeredAnimal extends Animal {
     this.endangered = true;
   }
 
+  public String getHealth(){
+    return health;
+  }
+
+  public String getAge(){
+    return age;
+  }
+
   public boolean isEndangered() {
     return endangered;
   }
