@@ -1,8 +1,22 @@
-header {
-  background-color: black;
-  padding: 20px 0 20px;
+body {
+color: #077410;
+font-family: 'Cormorant', serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Fredericka the Great', cursive;
 }
 
 li {
   list-style-type: none;
+}
+
+.panel-info > .panel-heading {
+    color: #318f43;
+    background-color: #d9f7db;
+    border-color: #95c9a1;
+}
+
+.panel-info {
+    border-color: #7ad785;
 }
