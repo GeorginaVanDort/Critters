@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.sql2o.*;
 import java.sql.Timestamp;
+import java.text.DateFormat;
 
 
 public class Sighting {
@@ -40,6 +41,10 @@ public class Sighting {
     return time;
   }
 
+  public String getTimeFormatted() {
+   return DateFormat.getDateTimeInstance().format(time);
+  }
+
   @Override
   public boolean equals(Object otherSighting){
     if (!(otherSighting instanceof Sighting)) {
@@ -67,9 +72,19 @@ public class Sighting {
   }
 
   public static List<Sighting> all() {
-    String sql = "SELECT * FROM sightings";
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "SELECT * FROM sightings";
+      return con.createQuery(sql)
+      .throwOnMappingFailure(false)
+      .executeAndFetch(Sighting.class);
+    }
+  }
+
+  public static List<Sighting> findByAnimal(int animalId) {
+    String sql = "SELECT * FROM sightings where animal_id = :animal_id";
     try(Connection con = DB.sql2o.open()) {
       return con.createQuery(sql)
+      .addParameter("animal_id", animalId)
       .throwOnMappingFailure(false)
       .executeAndFetch(Sighting.class);
     }

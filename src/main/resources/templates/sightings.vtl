@@ -1,0 +1,8 @@
+<ul>
+  #foreach ($sighting in $sightings)
+    <li><h4>Ranger Name:</h4> $sighting.getRangerName()</li>
+    <li><h4>Location: </h4> $sighting.getLocation()</li>
+    <li><h4>Time: </h4> $sighting.getTimeFormatted()</li>
+    <br>
+  #end
+</ul>

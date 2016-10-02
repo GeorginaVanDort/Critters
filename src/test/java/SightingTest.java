@@ -67,6 +67,16 @@ public class SightingTest {
   }
 
   @Test
+  public void all_returnsAllInstancesOfSightingByAnimalID_true() {
+    Sighting firstSighting = sightA;
+    firstSighting.save();
+    Sighting secondSighting = new Sighting("freddy", "up the hill", 34);
+    secondSighting.save();
+    assertEquals(true, Sighting.findByAnimal(34).get(0).equals(firstSighting));
+    assertEquals(true, Sighting.findByAnimal(34).get(1).equals(secondSighting));
+  }
+
+  @Test
   public void find_returnsSightingWithSameId_secondSighting() {
     Sighting firstSighting = sightA;
     firstSighting.save();
