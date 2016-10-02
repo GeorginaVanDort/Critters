@@ -37,6 +37,9 @@ public class EndangeredAnimal extends Animal {
 
   @Override
   public void save() {
+    if ((this.name.length())<=2) {
+      throw new IllegalArgumentException("Sorry, the inputted Name is too short");
+    }
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO animals (name, endangered, health, age) VALUES (:name, :endangered, :health, :age)";
       this.id = (int) con.createQuery(sql, true)

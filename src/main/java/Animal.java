@@ -30,6 +30,9 @@ public class Animal {
     }
 
   public void save() {
+    if ((this.name.length())<=2) {
+      throw new IllegalArgumentException("Sorry, the inputted Name is too short");
+    }
     try(Connection con = DB.sql2o.open()) {
       String sql = "INSERT INTO animals (name) VALUES (:name)";
       this.id = (int) con.createQuery(sql, true)
